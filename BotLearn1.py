@@ -3,8 +3,8 @@ import time
 
 
 API_URL = 'https://api.telegram.org/bot'
-BOT_TOKEN = '5424991242:AAGwomxQz1p46bRi_2m3V7kvJlt5RjK9xr0'
-TEXT = 'Ура! Классный апдейт!'
+BOT_TOKEN = '6358456657:AAGeGX8wUfEcgE5kOXK9rWBVr-3OnjK_0To'
+TEXT = 'РЈСЂР°!'
 MAX_COUNTER = 100
 
 offset = -2
@@ -14,7 +14,7 @@ chat_id: int
 
 while counter < MAX_COUNTER:
 
-    print('attempt =', counter)  #Чтобы видеть в консоли, что код живет
+    print('attempt =', counter)  #Р§С‚РѕР±С‹ РІРёРґРµС‚СЊ РІ РєРѕРЅСЃРѕР»Рё, С‡С‚Рѕ РєРѕРґ Р¶РёРІРµС‚
 
     updates = requests.get(f'{API_URL}{BOT_TOKEN}/getUpdates?offset={offset + 1}').json()
 
