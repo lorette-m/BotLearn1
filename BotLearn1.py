@@ -15,15 +15,15 @@ async def process_help_command(message: Message):
         'я пришлю тебе твое сообщение'
         )
     
-async def send_photo_echo(message: Message):
-    await message.reply_photo(message.photo[0].file_id)
-
 async def send_echo(message: Message):
-    await message.reply(text=message.text)
+    try:
+        await message.send_copy(chat_id=message.chat.id)
+    except TypeError:
+        await message.reply(text='Данный тип апдейтов не поддерживается '
+                 'методом send_copy')
     
 dp.message.register(process_start_command, Command(commands='start'))
 dp.message.register(process_help_command, Command(commands='help'))
-dp.message.register(send_photo_echo, F.photo)
 dp.message.register(send_echo)
     
 if __name__ == '__main__':
